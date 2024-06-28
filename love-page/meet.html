@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Color Choice</title>
+  <link rel="icon" href="./apple.png">
+<!-- (: made with love by OVi :) -->
+  <style>
+
+body{
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url(./party-popper-dinner-party.gif) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+}
+
+    .container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  max-width: 700px;
+  user-select: none;
+}
+
+.text {
+  font-size: 0.8rem;
+  text-align: left;
+  width: 100%;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.input {
+  border-radius: 8px;
+  padding: 7px 16px;
+  box-shadow: rgba(77, 79, 82, 0.2) 0px 8px 24px;
+  border: 2px solid rgb(184, 180, 180);
+  font-size: 0.8rem;
+  outline: none;
+  transition: 0.5s ease;
+}
+
+.input:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-color: rgb(138, 175, 255);
+}
+
+.input:focus {
+  border: 2px solid rgb(57, 120, 255);
+  box-shadow: rgba(133, 130, 130, 0.1) 0px 4px 12px;
+  transform: scale(0.99);
+}
+
+.input::placeholder {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.button {
+  padding: 6px 15px;
+  text-align: center;
+  color: rgb(95, 87, 87);
+  cursor: pointer;
+  background-color: white;
+  border-radius: 6px;
+  border: none;
+  transition: 0.5s;
+  width: 100%;
+  margin-top: 7px;
+  font-size: 13px;
+  box-shadow: rgba(104, 100, 100, 0.1) 0px 4px 6px -1px, rgba(49, 42, 42, 0.06) 0px 2px 4px -1px;
+}
+
+.button:hover {
+  border-radius: 7px;
+  background-color: rgb(243, 242, 242);
+  border-color: rgb(236, 232, 232);
+}
+
+
+
+  </style> <!--css file-->
+</head>
+<body>
+  
+  <div class="container new">
+
+    <form class="container" action="#">
+        <label style="font-size: 20px;" for="inputField">Where did we first cross paths? Think of a place where time seemed to stand still, and our journey began with a spark.</label>
+        <input placeholder="here" class="input" name="text" type="text" id="inputField">
+        <button class="button" type="button" value="club" onclick="checkInput()">submit</button>
+        </form>
+    
+  </div>
+  <script>
+   function checkInput() {
+    // Get the input value
+    var inputValue = document.getElementById("inputField").value;
+    
+    // Check if the input value is "club"
+    if (inputValue.trim().toLowerCase() === "club") {
+        // If it matches, redirect to the next page (replace 'next-page.html' with your actual next page URL)
+        window.location.href = './color.html';
+    } else {
+        // If it doesn't match, show an alert
+        alert("Ye Bhi Nahi Yaad App ko, 'club' Dalo.");
+        
+    }
+}
+    
+  </script>
+  
+</body>
+</html>

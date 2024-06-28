@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locked You</title>
+    <link rel="icon" href="./love.ico">
+
+    <!--styles-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+        html, body {
+            transition: 0.3s all ease;
+            background: url(./you-me.gif) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+            font-family: 'Caveat', cursive;
+        }
+
+
+    /* Animation for the typing and erasing text */
+    .typing-text {
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0;
+        border-right: .15em solid orange;
+        letter-spacing: .15em;
+        animation: type-erase 2.5s steps(40, end) infinite;
+
+        color: white;
+        font-size: 40px;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+    }
+
+    /* Keyframes for typing and erasing */
+    @keyframes type-erase {
+        0%, 100% { width: 0; border-right: .15em solid transparent; }
+        50% { width: 50%; border-right: .10em solid orange; }
+    }
+
+
+    
+    @media only screen and (max-width: 620px) {
+
+        @keyframes type-erase {
+            0%, 100% { width: 0; border-right: .15em solid transparent; }
+            50% { width: 90%; border-right: .15em solid orange; }
+        }
+
+        .typing-text {
+            font-size: 21px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 5px;
+            
+        }
+    }
+
+
+    .btn {
+  height: 4em;
+  width: 22em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0px solid black;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+    left: 40%;
+}
+
+.wrapper {
+  height: 2em;
+  width: 20rem;
+  position: relative;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 30px;
+  z-index: 1;
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+  transition: all 0.5s ease;
+}
+
+.flower {
+  display: grid;
+  grid-template-columns: 1em 1em;
+  position: absolute;
+  transition: grid-template-columns 0.8s ease;
+}
+
+.flower1 {
+  top: -12px;
+  left: -13px;
+  transform: rotate(5deg);
+}
+
+.flower2 {
+  bottom: -5px;
+  left: 8px;
+  transform: rotate(35deg);
+}
+
+.flower3 {
+  bottom: -15px;
+  transform: rotate(0deg);
+}
+
+.flower4 {
+  top: -14px;
+  transform: rotate(15deg);
+}
+
+.flower5 {
+  right: 11px;
+  top: -3px;
+  transform: rotate(25deg);
+}
+
+.flower6 {
+  right: -15px;
+  bottom: -15px;
+  transform: rotate(30deg);
+}
+
+.petal {
+  height: 4em;
+  width: 4em;
+  border-radius: 40% 70% / 7% 90%;
+  background: linear-gradient(#07a6d7, #93e0ee);
+  border: 0.5px solid #96d1ec;
+  z-index: 0;
+  transition: width 0.8s ease, height 0.8s ease;
+}
+
+.two {
+  transform: rotate(90deg);
+}
+
+.three {
+  transform: rotate(270deg);
+}
+
+.four {
+  transform: rotate(180deg);
+}
+
+.btn:hover .petal {
+  background: linear-gradient(#0761d7, #93bdee);
+  border: 0.5px solid #96b4ec;
+}
+
+.btn:hover .flower {
+  grid-template-columns: 2.5em 2.5em;
+}
+
+.btn:hover .flower .petal {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.btn:hover .text {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.btn:hover div.flower1 {
+  animation: 15s linear 0s normal none infinite running flower1;
+}
+
+@keyframes flower1 {
+  0% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(365deg);
+  }
+}
+
+.btn:hover div.flower2 {
+  animation: 13s linear 1s normal none infinite running flower2;
+}
+
+@keyframes flower2 {
+  0% {
+    transform: rotate(35deg);
+  }
+
+  100% {
+    transform: rotate(-325deg);
+  }
+}
+
+.btn:hover div.flower3 {
+  animation: 16s linear 1s normal none infinite running flower3;
+}
+
+@keyframes flower3 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn:hover div.flower4 {
+  animation: 17s linear 1s normal none infinite running flower4;
+}
+
+@keyframes flower4 {
+  0% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(375deg);
+  }
+}
+
+.btn:hover div.flower5 {
+  animation: 20s linear 1s normal none infinite running flower5;
+}
+
+@keyframes flower5 {
+  0% {
+    transform: rotate(25deg);
+  }
+
+  100% {
+    transform: rotate(-335deg);
+  }
+}
+
+.btn:hover div.flower6 {
+  animation: 15s linear 1s normal none infinite running flower6;
+}
+
+@keyframes flower6 {
+  0% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(390deg);
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <!--muaaaaaaahhhhhhh-->
+
+    <h3 class="typing-text" style="display: none;">YOU ARE MINE...❤</h3>
+    <!--html code ends-->
+    <button class="btn" onclick="showAlertAndRedirect()">
+        <div class="wrapper">
+          <p class="text">Pick Me Baby Now...❤</p>
+      
+          <div class="flower flower1">
+            <div class="petal one"></div>
+            <div class="petal two"></div>
+            <div class="petal three"></div>
+            <div class="petal four"></div>
+          </div>
+          <div class="flower flower2">
+            <div class="petal one"></div>
+            <div class="petal two"></div>
+            <div class="petal three"></div>
+            <div class="petal four"></div>
+          </div>
+          <div class="flower flower3">
+            <div class="petal one"></div>
+            <div class="petal two"></div>
+            <div class="petal three"></div>
+            <div class="petal four"></div>
+          </div>
+          <div class="flower flower4">
+            <div class="petal one"></div>
+            <div class="petal two"></div>
+            <div class="petal three"></div>
+            <div class="petal four"></div>
+          </div>
+          <div class="flower flower5">
+            <div class="petal one"></div>
+            <div class="petal two"></div>
+            <div class="petal three"></div>
+            <div class="petal four"></div>
+          </div>
+          <div class="flower flower6">
+            <div class="petal one"></div>
+            <div class="petal two"></div>
+            <div class="petal three"></div>
+            <div class="petal four"></div>
+          </div>
+        </div>
+      </button>
+      
+      
+    
+    <!--scripts-->
+    <script>
+        // Wait for all assets to load
+        window.onload = function() {
+            // Start the initial animation
+            const typingText = document.querySelector('.typing-text');
+            typingText.style.display = 'block';
+            typingText.classList.add('typing');
+        };
+    </script>
+    <script>
+        function showAlertAndRedirect() {
+  window.location.href = './meet.html';
+} 
+    </script>
+    
+    
+</body>
+</html>
